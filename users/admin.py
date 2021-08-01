@@ -14,3 +14,4 @@ class UserProfileAdmin(admin.ModelAdmin):
 models = [Category, Genre, Title]
 admin.site.register(UserProfile, UserProfileAdmin)
 admin.site.register(models)
+
