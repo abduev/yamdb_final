@@ -55,18 +55,19 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE }}
           stack_file_name: docker-compose.yaml
           script: |
-            sudo docker pull <имя-пользователя>/<имя-репозитория>
+            sudo docker pull abduev/yamdb_final:latest
             sudo docker-compose stop
             sudo docker-compose rm web
             # Создаст файл для переменных окружения
             touch .env
             # Наполнит файл переменными окружения из секретов GitHub
-            echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
-            echo DB_NAME=${{ secrets.DB_NAME }} >> .env
+            echo POSTGRES_NAME=${{ secrets.POSTGRES_NAME }} >> .env
             echo POSTGRES_USER=${{ secrets.POSTGRES_USER }} >> .env
             echo POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} >> .env
-            echo DB_HOST=${{ secrets.DB_HOST }} >> .env
-            echo DB_PORT=${{ secrets.DB_PORT }} >> .env
+            echo POSTGRES_HOST=${{ secrets.POSTGRES_HOST }} >> .env
+            echo POSTGRES_PORT=${{ secrets.POSTGRES_PORT }} >> .env
+            echo EMAIL_ADMIN=${{ secrets.EMAIL_ADMIN }} >> .env
+            echo DEBUG_VALUE=${{ secrets.DEBUG_VALUE }} >> .env
             sudo docker-compose up -d
   send_message:
       runs-on: ubuntu-latest
