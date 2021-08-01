@@ -1,7 +1,7 @@
 from django.contrib import admin
 
-from users.models import UserProfile
 from api.models import Category, Genre, Title
+from users.models import UserProfile
 
 
 class UserProfileAdmin(admin.ModelAdmin):

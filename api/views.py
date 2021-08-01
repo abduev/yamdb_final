@@ -1,17 +1,15 @@
-from django.shortcuts import get_object_or_404
 from django.db.models import Avg
-from rest_framework import viewsets, permissions
+from django.shortcuts import get_object_or_404
+from rest_framework import permissions, viewsets
 
 from users.permissions import IsAdminOrReadOnly, IsModeratorOrReadOnly
 
-from .viewsets import CreateListDestroyModelViewSet
 from .filters import TitleFilter
-from .models import Review, Category, Genre, Title
-from .serializers import (
-    ReviewSerializer, CommentSerializer,
-    CategorySerializer, GenreSerializer,
-    TitlePostSerializer, TitleListSerializer
-)
+from .models import Category, Genre, Review, Title
+from .serializers import (CategorySerializer, CommentSerializer,
+                          GenreSerializer, ReviewSerializer,
+                          TitleListSerializer, TitlePostSerializer)
+from .viewsets import CreateListDestroyModelViewSet
 
 
 class CategoryViewSet(CreateListDestroyModelViewSet):

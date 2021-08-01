@@ -1,20 +1,18 @@
 import uuid
 
-from django.shortcuts import get_object_or_404
 from django.core.mail import send_mail
+from django.shortcuts import get_object_or_404
 from rest_framework import permissions, status, viewsets
 from rest_framework.decorators import action, api_view, permission_classes
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
 
-from .serializers import (
-    UserSerializer,
-    EmailConfirmSerializer,
-    TokenSerializer
-)
+from api_yamdb.settings import EMAIL_ADMIN
+
 from .models import UserProfile
 from .permissions import IsAdmin
-from api_yamdb.settings import EMAIL_ADMIN
+from .serializers import (EmailConfirmSerializer, TokenSerializer,
+                          UserSerializer)
 
 
 @api_view(['POST'])
