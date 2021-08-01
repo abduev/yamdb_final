@@ -9,7 +9,7 @@
 Проект выполнен на фреймворке Django, API к проекту - на Django REST Framework.
 Для запуска используется Docker.
 
-![yamdb workflow](https://github.com/abduev/yamdb_final/actions/workflows/yamdb_final.yml/badge.svg)
+![yamdb workflow](https://github.com/abduev/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 ## Установка и запуск
 Требования:
  - Python 3.8+
