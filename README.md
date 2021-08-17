@@ -41,7 +41,7 @@ docker-compose exec web python manage.py collectstatic --no-input
 docker-compose exec web python manage.py createsuperuser
 ```
 
-Проект готов к работе. Документация к API проекта: http://127.0.0.1/redoc/
+Проект готов к работе. Документация к API проекта: http://127.0.0.1/redoc/.
 
 
 Для остановки проекта выполните команду:
