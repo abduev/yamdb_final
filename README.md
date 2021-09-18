@@ -7,7 +7,7 @@
 
 ## Содержание проекта
 Проект выполнен на фреймворке Django, API к проекту - на Django REST Framework.
-Выполнена контейнеризация с помощью Docker.
+Реализована контейнеризация с помощью Docker.
 
 ![yamdb workflow](https://github.com/abduev/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 ## Установка и запуск
